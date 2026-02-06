@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Curriculum vitae for Quinten Mortier."
+    />
+    <title>CV | Quinten Mortier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+
+    <header class="page-hero">
+      <div class="page-hero__intro">
+        <p class="kicker">Curriculum Vitae</p>
+        <h1>CV</h1>
+        <p class="subtitle">
+          Download the latest PDF or view it inline below.
+        </p>
+        <div class="cta">
+          <a class="btn" href="CV.pdf">Download PDF</a>
+          <a class="btn btn--ghost" href="index.html">Home</a>
+        </div>
+      </div>
+      <div class="page-hero__card">
+        <div class="meta-row">
+          <span>Current</span>
+          <strong>Eurex, Quantitative Analyst</strong>
+        </div>
+        <div class="meta-row">
+          <span>Email</span>
+          <strong>quintenmortier@outlook.com</strong>
+        </div>
+        <div class="meta-row">
+          <span>Location</span>
+          <strong>Ghent, Belgium</strong>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="academic.html">Academic</a>
+      <a href="cv.html" class="is-active">CV</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <main>
+      <section class="card">
+        <h2>CV PDF</h2>
+        <p class="muted">
+          If the inline viewer does not load, use the download link above.
+        </p>
+        <div class="cv-embed">
+          <object data="CV.pdf" type="application/pdf">
+            <p>
+              PDF preview not available. Download the file here:
+              <a href="CV.pdf">CV.pdf</a>.
+            </p>
+          </object>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Quinten Mortier</span>
+    </footer>
+  </body>
+</html>
