@@ -403,13 +403,7 @@ a {
   max-height: 900px;
   border: 0;
 }
-
-@media (min-width: 880px) {
-  .pub-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
+\r\n
 @media (max-width: 860px) {
   .page-hero {
     grid-template-columns: 1fr;
@@ -428,7 +422,6 @@ a {
 .pub-media {
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(27, 27, 27, 0.12);
   background: rgba(10, 74, 106, 0.04);
   aspect-ratio: 4 / 3;
 }
@@ -456,3 +449,4 @@ a {
     align-items: start;
   }
 }
+
