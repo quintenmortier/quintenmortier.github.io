@@ -433,13 +433,14 @@ a {
   background: rgba(10, 74, 106, 0.04);
   height: 100%;
   min-height: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: block;
 }
 
-.pub-media--peps {
-  background-image: url("peps.png");
+.pub-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .pub-authors {
@@ -449,7 +450,7 @@ a {
 
 .pub-abstract {
   margin: 6px 0 0;
-  text-align: justify;
+  text-align: justify !important;
   text-justify: inter-word;
   text-align-last: left;
   hyphens: auto;
