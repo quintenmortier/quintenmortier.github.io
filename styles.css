@@ -350,7 +350,8 @@ a {
 }
 
 .pub-grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 18px;
 }
 
@@ -432,6 +433,9 @@ a {
   height: 100%;
   object-fit: contain;
   display: block;
+  border: 0;
+  outline: 0;
+  clip-path: inset(4px);
 }
 
 .pub-authors {
