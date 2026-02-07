@@ -415,7 +415,12 @@ a {
   gap: 18px;
 }
 
-.pub-body {
+.pub-top {
+  display: grid;
+  gap: 18px;
+}
+
+.pub-meta {
   display: grid;
   gap: 6px;
 }
@@ -435,7 +440,9 @@ a {
   display: block;
   border: 0;
   outline: 0;
-  clip-path: inset(4px);
+  clip-path: inset(6px);
+  transform: scale(1.06);
+  transform-origin: center;
 }
 
 .pub-authors {
@@ -448,8 +455,8 @@ a {
 }
 
 @media (min-width: 760px) {
-  .pub-card--featured {
-    grid-template-columns: minmax(180px, 220px) 1fr;
+  .pub-top {
+    grid-template-columns: minmax(200px, 240px) 1fr;
     align-items: start;
   }
 }
