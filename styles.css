@@ -354,8 +354,11 @@ a {
   color: #fff;
 }
 
-.page-hero__card--accent a {
-  color: #fff;
+.page-hero__card--accent a,
+.page-hero__card--accent a:visited,
+.page-hero__card--accent a:hover,
+.page-hero__card--accent a:active {
+  color: #fff !important;
 }
 
 .page-hero__card--accent .meta-row span {
