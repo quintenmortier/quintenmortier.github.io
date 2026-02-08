@@ -419,7 +419,7 @@ a {
   display: grid;
   gap: 18px;
   align-items: stretch;
-  grid-template-columns: minmax(500px, 600px) 1fr;
+  grid-template-columns: minmax(400px, 500px) 1fr;
 }
 
 .pub-meta {
