@@ -404,7 +404,7 @@ a {
   max-height: 900px;
   border: 0;
 }
-\r\n
+
 @media (max-width: 860px) {
   .page-hero {
     grid-template-columns: 1fr;
