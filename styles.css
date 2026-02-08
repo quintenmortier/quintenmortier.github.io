@@ -499,8 +499,8 @@ a {
 .pub-top {
   display: grid;
   gap: 18px;
-  align-items: stretch;
-  grid-template-columns: minmax(350px, 450px) 1fr;
+  align-items: start;
+  grid-template-columns: minmax(180px, 220px) 1fr;
 }
 
 .pub-meta {
@@ -513,15 +513,15 @@ a {
   border-radius: 14px;
   overflow: hidden;
   background: rgba(10, 74, 106, 0.04);
-  height: 100%;
-  min-height: 220px;
+  height: auto;
+  min-height: 0;
   display: block;
 }
 
 .pub-media img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
