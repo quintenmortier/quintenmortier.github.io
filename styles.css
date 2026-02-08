@@ -361,6 +361,11 @@ a {
   color: #fff !important;
 }
 
+.page-hero__card--accent .accent-link {
+  color: #fff !important;
+  text-decoration-color: rgba(255, 255, 255, 0.7);
+}
+
 .page-hero__card--accent .meta-row span {
   color: rgba(255, 255, 255, 0.7);
 }
