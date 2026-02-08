@@ -413,8 +413,9 @@ a {
   background: rgba(255, 255, 255, 0.9);
 }
 
-.thesis-card {
-  margin-top: 16px;
+.thesis-grid {
+  display: grid;
+  gap: 18px;
 }
 
 .thesis-top {
