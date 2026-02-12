@@ -54,6 +54,7 @@ body {
 .hero__meta {
   display: grid;
   align-content: stretch;
+  justify-items: end;
   animation: rise 0.9s ease both;
   animation-delay: 0.15s;
 }
@@ -208,6 +209,7 @@ main > section:nth-of-type(7) {
   box-shadow: var(--shadow);
   display: grid;
   place-items: center;
+  width: min(100%, 280px);
 }
 
 .photo-card--accent {
