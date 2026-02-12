@@ -209,7 +209,7 @@ main > section:nth-of-type(7) {
   box-shadow: var(--shadow);
   display: grid;
   place-items: center;
-  width: min(100%, 260px);
+  width: min(100%, 220px);
 }
 
 .photo-card--accent {
@@ -219,7 +219,7 @@ main > section:nth-of-type(7) {
 
 .photo-frame {
   width: 100%;
-  aspect-ratio: 4 / 6;
+  aspect-ratio: 4 / 7;
   border-radius: 14px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
