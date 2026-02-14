@@ -410,12 +410,20 @@ a {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.page-hero__card--media {
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-hero__card--media .carousel__viewport {
+  border-radius: 0;
+  background: transparent;
+}
+
 .carousel {
   position: relative;
   height: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 12px;
+  width: 100%;
 }
 
 .carousel__viewport {
