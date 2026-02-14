@@ -112,15 +112,27 @@
         const carousel = document.querySelector("[data-carousel]");
         if (!carousel) return;
 
+        const intro = document.querySelector(".page-hero__intro");
+        const mediaCard = document.querySelector(".page-hero__card--media");
         const track = carousel.querySelector(".carousel__track");
         const slides = Array.from(carousel.querySelectorAll(".carousel__slide"));
         let index = 0;
+
+        const syncHeight = () => {
+          if (!intro || !mediaCard) return;
+          if (window.matchMedia("(max-width: 860px)").matches) {
+            mediaCard.style.height = "auto";
+            return;
+          }
+          mediaCard.style.height = `${intro.getBoundingClientRect().height}px`;
+        };
 
         const update = () => {
           track.style.transform = `translateX(-${index * 100}%)`;
         };
 
         update();
+        syncHeight();
 
         if (slides.length > 1) {
           setInterval(() => {
@@ -128,6 +140,9 @@
             update();
           }, 4500);
         }
+
+        window.addEventListener("resize", syncHeight);
+        window.addEventListener("load", syncHeight);
       })();
     </script>
   </body>
