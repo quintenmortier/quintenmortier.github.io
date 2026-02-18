@@ -4,8 +4,8 @@
   const dark = "dark";
   const light = "light";
   const icons = {
-    dark: "☀",
-    light: "☾",
+    dark: "&#9728;",
+    light: "&#9790;",
   };
 
   const getStoredTheme = () => {
@@ -22,7 +22,7 @@
     const icon = isDark ? icons.dark : icons.light;
     const buttons = document.querySelectorAll("[data-theme-toggle]");
     buttons.forEach((button) => {
-      button.textContent = icon;
+      button.innerHTML = icon;
       button.setAttribute("aria-label", nextAria);
       button.setAttribute("title", nextAria);
       button.setAttribute("aria-pressed", String(isDark));
