@@ -3,6 +3,10 @@
   const storageKey = "site-theme";
   const dark = "dark";
   const light = "light";
+  const icons = {
+    dark: "☀",
+    light: "☾",
+  };
 
   const getStoredTheme = () => {
     try {
@@ -14,13 +18,14 @@
 
   const updateButtons = (theme) => {
     const isDark = theme === dark;
-    const nextLabel = isDark ? "Light Mode" : "Dark Mode";
     const nextAria = isDark ? "Switch to light mode" : "Switch to dark mode";
+    const icon = isDark ? icons.dark : icons.light;
     const buttons = document.querySelectorAll("[data-theme-toggle]");
     buttons.forEach((button) => {
-      button.textContent = nextLabel;
+      button.textContent = icon;
       button.setAttribute("aria-label", nextAria);
-      button.setAttribute("aria-pressed", String(!isDark));
+      button.setAttribute("title", nextAria);
+      button.setAttribute("aria-pressed", String(isDark));
     });
   };
 
@@ -49,6 +54,12 @@
       });
     });
   };
+
+  window.addEventListener("storage", (event) => {
+    if (event.key !== storageKey) return;
+    const next = event.newValue === light ? light : dark;
+    applyTheme(next);
+  });
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", bindToggle);
