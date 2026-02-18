@@ -5,7 +5,7 @@
   const light = "light";
   const icons = {
     dark: "&#9728;",
-    light: "&#9790;",
+    light: "&#9789;",
   };
 
   const getStoredTheme = () => {
@@ -34,6 +34,9 @@
     updateButtons(theme);
   };
 
+  const getCurrentTheme = () =>
+    root.getAttribute("data-theme") === light ? light : dark;
+
   const saveTheme = (theme) => {
     try {
       localStorage.setItem(storageKey, theme);
@@ -44,10 +47,12 @@
   applyTheme(initialTheme);
 
   const bindToggle = () => {
+    updateButtons(getCurrentTheme());
+
     const buttons = document.querySelectorAll("[data-theme-toggle]");
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        const current = root.getAttribute("data-theme") === light ? light : dark;
+        const current = getCurrentTheme();
         const next = current === dark ? light : dark;
         applyTheme(next);
         saveTheme(next);
@@ -59,6 +64,10 @@
     if (event.key !== storageKey) return;
     const next = event.newValue === light ? light : dark;
     applyTheme(next);
+  });
+
+  window.addEventListener("pageshow", () => {
+    updateButtons(getCurrentTheme());
   });
 
   if (document.readyState === "loading") {
