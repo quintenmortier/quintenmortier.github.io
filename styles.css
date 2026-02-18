@@ -234,6 +234,28 @@ h3 {
   outline-offset: 2px;
 }
 
+@media (max-width: 640px) {
+  .nav {
+    padding: 0 12px;
+    gap: 8px;
+    font-size: 0.82rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .nav a {
+    white-space: nowrap;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+}
+
 main {
   max-width: 1040px;
   margin: 24px auto 0;
@@ -516,6 +538,10 @@ a:hover {
 
 .page-hero__card--accent .meta-row span {
   color: rgba(var(--text-on-strong-rgb), 0.72);
+}
+
+:root[data-theme="dark"] .page-hero__card--emerald-dark {
+  background: rgba(var(--accent-2-rgb), 0.92);
 }
 
 .page-hero__card--media {
