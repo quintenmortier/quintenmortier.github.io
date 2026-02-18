@@ -236,7 +236,7 @@ h3 {
 
 @media (max-width: 640px) {
   .nav {
-    padding: 0 12px;
+    padding: 0 24px;
     gap: 8px;
     font-size: 0.82rem;
     flex-wrap: nowrap;
@@ -253,6 +253,12 @@ h3 {
     width: 28px;
     height: 28px;
     font-size: 0.9rem;
+  }
+
+  .mobile-title-nowrap {
+    white-space: nowrap;
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    line-height: 1.1;
   }
 }
 
@@ -540,7 +546,7 @@ a:hover {
   color: rgba(var(--text-on-strong-rgb), 0.72);
 }
 
-:root[data-theme="dark"] .page-hero__card--emerald-dark {
+.page-hero__card--emerald-dark {
   background: rgba(var(--accent-2-rgb), 0.92);
 }
 
