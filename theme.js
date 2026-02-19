@@ -8,12 +8,19 @@
     light: "&#9789;",
   };
 
+  const getDefaultTheme = () => {
+    const isMobile =
+      window.matchMedia &&
+      window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    return isMobile ? dark : light;
+  };
+
   const getStoredTheme = () => {
     try {
       const value = localStorage.getItem(storageKey);
       if (value === dark || value === light) return value;
     } catch {}
-    return dark;
+    return getDefaultTheme();
   };
 
   const updateButtons = (theme) => {
@@ -62,7 +69,9 @@
 
   window.addEventListener("storage", (event) => {
     if (event.key !== storageKey) return;
-    const next = event.newValue === light ? light : dark;
+    const next = event.newValue === light || event.newValue === dark
+      ? event.newValue
+      : getDefaultTheme();
     applyTheme(next);
   });
 
