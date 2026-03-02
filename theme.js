@@ -67,6 +67,27 @@
     });
   };
 
+  const setExternalLinksToNewTab = () => {
+    const links = document.querySelectorAll("a[href]");
+    links.forEach((link) => {
+      if (link.hasAttribute("target")) return;
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+
+      let url;
+      try {
+        url = new URL(href, window.location.href);
+      } catch {
+        return;
+      }
+
+      if (url.origin !== window.location.origin) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+    });
+  };
+
   window.addEventListener("storage", (event) => {
     if (event.key !== storageKey) return;
     const next = event.newValue === light || event.newValue === dark
@@ -80,8 +101,12 @@
   });
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", bindToggle);
+    document.addEventListener("DOMContentLoaded", () => {
+      bindToggle();
+      setExternalLinksToNewTab();
+    });
   } else {
     bindToggle();
+    setExternalLinksToNewTab();
   }
 })();
