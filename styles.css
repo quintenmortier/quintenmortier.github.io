@@ -148,7 +148,10 @@ h3 {
 #experience p,
 #experience li,
 #education li,
-#publications li {
+#publications li,
+#role-focus p,
+#delivery-scope p,
+#selected-contributions li {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
